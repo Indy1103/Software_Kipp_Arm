@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: description
+    relative_path: urdf/SPEAR_Arm.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/kipps_arm.srdf
+  CONFIG:
+    author_name: Induwara
+    author_email: kandapah@ualberta.ca
+    generated_timestamp: 1706169650

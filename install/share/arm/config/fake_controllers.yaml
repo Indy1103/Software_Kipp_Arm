@@ -1,0 +1,16 @@
+controller_list:
+  - name: fake_kipps_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - base_joint
+      - link1_joint
+      - link2_joint
+      - link3_joint
+      - link4_joint
+  - name: fake_EFF_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - eef_joint
+initial:  # Define initial robot poses per group
+  - group: kipps_arm
+    pose: Home
