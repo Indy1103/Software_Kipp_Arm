@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(kipps_teleop_arm)
+project(kipps_arm_can)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -8,7 +8,6 @@ project(kipps_teleop_arm)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  joy
   rospy
   std_msgs
 )
@@ -104,8 +103,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES kipps_teleop_arm
-#  CATKIN_DEPENDS joy rospy std_msgs
+#  LIBRARIES kipps_arm_can
+#  CATKIN_DEPENDS rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -122,7 +121,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/kipps_teleop_arm.cpp
+#   src/${PROJECT_NAME}/kipps_arm_can.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -133,7 +132,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/kipps_teleop_arm_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/kipps_arm_can_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -192,25 +191,23 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 
-# Install Launch files
 install(DIRECTORY launch/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 )
 
-install(DIRECTORY scripts/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/scripts
+install(DIRECTORY config/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config
 )
 
-catkin_install_python(PROGRAMS scripts/arm_control.py 
+catkin_install_python(PROGRAMS scripts/kipps_can.py 
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-
 #############
 ## Testing ##
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_kipps_teleop_arm.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_kipps_arm_can.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

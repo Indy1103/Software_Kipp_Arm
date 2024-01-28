@@ -1,0 +1,6 @@
+<launch>
+    <!-- Arm2Can Node -->
+    <node name="arm2can" pkg="kipps_arm_can" type="kipps_can.py" output="screen">
+        <!-- Add any necessary parameters or arguments here -->
+    </node>
+</launch>

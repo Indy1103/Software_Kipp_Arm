@@ -3,4 +3,7 @@
     <node name="joy_node" pkg="joy" type="joy_node" output="screen">
     <remap from="joy" to="joy_arm"/>
     </node>
+    <node pkg="kipps_teleop_arm" type="arm_control.py" name="arm_control" output="screen">
+        <!-- Add any required arguments or ROS parameters here -->
+    </node>
 </launch>
