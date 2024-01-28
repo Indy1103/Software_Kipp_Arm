@@ -1,5 +1,5 @@
 controller_list:
-  - name: arm_position_controller
+  - name: arm_controller_position
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: True
@@ -9,3 +9,4 @@ controller_list:
       - link2_joint
       - link3_joint
       - link4_joint
+      - eef_joint

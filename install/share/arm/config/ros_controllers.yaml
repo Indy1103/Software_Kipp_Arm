@@ -1,4 +1,4 @@
-arm_position_controller:
+arm_controller_position:
   type: position_controllers/JointTrajectoryController
   joints:
     - base_joint
@@ -6,6 +6,7 @@ arm_position_controller:
     - link2_joint
     - link3_joint
     - link4_joint
+    - eef_joint
   gains:
     base_joint:
       p: 100
@@ -28,6 +29,11 @@ arm_position_controller:
       i: 1
       i_clamp: 1
     link4_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    eef_joint:
       p: 100
       d: 1
       i: 1

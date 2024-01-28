@@ -7,9 +7,6 @@ controller_list:
       - link2_joint
       - link3_joint
       - link4_joint
-  - name: fake_eef_controller
-    type: $(arg fake_execution_type)
-    joints:
       - eef_joint
 initial:  # Define initial robot poses per group
   - group: arm

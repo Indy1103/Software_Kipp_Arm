@@ -9,3 +9,4 @@ controller_list:
       - link2_joint
       - link3_joint
       - link4_joint
+      - eef_joint

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="config" default="/ssd/Software_Kipp_Arm/install/share/kipps_servo/config/kipps_servo.yaml"/>
+    
+    <node name="servo_server" pkg="moveit_servo" type="servo_server" output="screen" >
+        <rosparam command="load" file="$(arg config)"/>
+    </node>
+
+</launch>
+  
